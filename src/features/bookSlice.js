@@ -3,7 +3,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const token = Cookies.get("token");
-const api = `http://13.233.157.172:3000/books/`;
+const api = `${process.env.REACT_APP_API_URL}/books/`;
 
 export const fetchBooks = createAsyncThunk("books/fetchBooks", async () => {
   const response = await axios.get(api);

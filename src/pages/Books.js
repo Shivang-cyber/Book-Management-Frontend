@@ -12,10 +12,10 @@ const Books = () => {
   const navigate = useNavigate();
 
    useEffect(() => {
-    dispatch(verifyToken());
-    if (!loginSuccess || !isAuthenticated) {
-      navigate('/login');
-    }
+     if (!loginSuccess || !isAuthenticated) {
+       navigate('/login');
+      }
+      dispatch(verifyToken());
   }, [loginSuccess,isAuthenticated, navigate, dispatch]);
 
   useEffect(() => {
@@ -24,9 +24,6 @@ const Books = () => {
     }
   }, [status, dispatch]);
 
-  const handleEdit = (bookId) => {
-    console.log('Edit book with ID:', bookId);
-  };
 
   return (
     <div className="p-6">
@@ -38,7 +35,7 @@ const Books = () => {
       {status === 'succeeded' && (
         <div className="flex flex-wrap align-items justify-center">
           {items.map((book) => (
-            <BookEditCard key={book.book_id} book={book} onEdit={handleEdit} />
+            <BookEditCard key={book.book_id} book={book} />
           ))}
         </div>
       )}

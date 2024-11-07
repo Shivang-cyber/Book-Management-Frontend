@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-const api = `http://13.233.157.172:3000/auth`;
+const api = `${process.env.REACT_APP_API_URL}/auth`;
 
 export const verifyToken = createAsyncThunk(
   'auth/verifyToken',

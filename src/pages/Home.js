@@ -17,6 +17,7 @@ const Home = () => {
   return (
     <div className="w-full max-w-lg bg-white p-8 rounded shadow-md text-center">
       <p className="text-gray-600">Welcome</p>
+      <p className="text-gray-600">To The Library</p>
     </div>
   );
 };

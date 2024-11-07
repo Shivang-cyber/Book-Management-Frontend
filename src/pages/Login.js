@@ -17,10 +17,11 @@ const Login = () => {
   };
 
   useEffect(() => {
-    dispatch(verifyToken());
     if (loginSuccess) {
-      navigate('/book');
+      navigate('/');
     }
+    dispatch(verifyToken());
+    
   }, [loginSuccess, navigate, dispatch]);
 
   return (

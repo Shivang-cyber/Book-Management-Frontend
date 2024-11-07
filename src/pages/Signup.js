@@ -18,10 +18,10 @@ const Signup = () => {
   };
 
   useEffect(() => {
-    dispatch(verifyToken());
     if (loginSuccess) {
       navigate('/book');
     }
+    dispatch(verifyToken());
   }, [loginSuccess, navigate, dispatch]);
 
 
