@@ -57,13 +57,18 @@ const bookSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchBooks.pending, (state) => {
+        console.log("jere")
         state.status = "loading";
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
+        console.log("pere")
+
         state.status = "succeeded";
         state.items = action.payload;
       })
       .addCase(fetchBooks.rejected, (state, action) => {
+        console.log("here")
+
         state.status = "failed";
         state.error = action.error.message;
       })
